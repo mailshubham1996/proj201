@@ -50,27 +50,15 @@ svm=cv2.ml.SVM_create()
 svm.train(np.array(traindata),cv2.ml.ROW_SAMPLE,np.array(trainlabels))
 
 
-path2="C:/proj/images/test/5.png"
+path2="C:/proj/images/test/98.png"
 
 imgtest=cv2.imread(path2,0)
-siftkp=sift.detect(imgtest)
-bowsig=bow_extract.compute(imgtest,siftkp)
+siftkp2=sift.detect(imgtest,None)
+bowsig=bow_extract.compute(imgtest,siftkp2)
 
 
-i=0
-j=0
-confusion=np.zeros((5,5))
-
-def classfify(pth):
-    feature=feature_extract(pth)
-    p=svm.predict(feature)
-    confusion[train_labels[count]-1,p-1]=confusion[trainlabels[count]-1,p-1]+1
-    
-for p 
-
-
-#p=svm.predict(bowsig)
-#print(p)
+p=svm.predict(bowsig)
+print(p)
 
 
 
