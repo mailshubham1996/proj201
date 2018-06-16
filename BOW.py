@@ -50,13 +50,13 @@ svm=cv2.ml.SVM_create()
 svm.train(np.array(traindata),cv2.ml.ROW_SAMPLE,np.array(trainlabels))
 
 
-path2="C:/proj/images/test/98.png"
+path2="C:/proj/images/test/test3.jpg"
 
 imgtest=cv2.imread(path2,0)
 siftkp2=sift.detect(imgtest,None)
 bowsig=bow_extract.compute(imgtest,siftkp2)
 
-
+#print(traindata)
 p=svm.predict(bowsig)
 print(p)
 
