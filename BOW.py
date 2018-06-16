@@ -25,7 +25,7 @@ dictionary=BOW.cluster()
 flann_params = dict(algorithm =FLANN_INDEX_KDTREE , trees = 5)
 matcher = cv2.FlannBasedMatcher(flann_params, {}) 
 bow_extract = cv2.BOWImgDescriptorExtractor( sift , matcher )
-bow_extract.setVocabulary(dictionary) # the 64x20 dictionary, you made before
+bow_extract.setVocabulary(dictionary) 
 
 traindata=[]
 trainlabels=[]
